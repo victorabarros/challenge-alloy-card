@@ -8,9 +8,7 @@ class Game(Resource):
     def __init__(self):
         self._repository = Repository()
 
-    def get(self):
-        request = reqparse.request
-        uid = request.values.get('uid')
+    def get(self, uid):
         # if not uid:
         #     return 404
         return self._repository.fetch(uid).to_dict(), 200
