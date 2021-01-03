@@ -1,12 +1,15 @@
 from uuid import uuid4
 
+DB = {}
+
 
 class Repository:
-    def __init__(self):
-        self._db = {}
-
     def insert(self, game):
-        uid = uuid4().__str__()
-        self._db[uid] = game
+        uid = str(uuid4())
+        DB[uid] = game
+        print('insert\n', DB)
         # TODO save on mongo
         return uid
+
+    def fetch(self, uid):
+        return DB.get(uid)
