@@ -6,4 +6,4 @@
 |-|-|-|
 |POST|/game|Create new game|
 |GET|/game/{gameId}|Return all pieces positions|
-|PUT|/game/{gameId}/chess-piece/{piece-id}|Move a chess piece|
+|PATCH|/game/{gameId}|Move a chess piece. [body](./helper/validator.py)|
